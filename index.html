@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Vanilla ECS Roguelike Base</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="maindiv" > 
+    <canvas id="game" width="800" height="600"></canvas>
+    <pre id="logdiv"></pre>
+  </div>
+  <div class="info">Arrow keys to move. Kill the goblins! Pure HTML/CSS/JS ECS Roguelike Base.</div>
+  
+  <script src="src/script-loader.js"></script>
+  <script>
+    ScriptLibrary.loadFrom("src/");
+  </script>
+</body>
+</html>

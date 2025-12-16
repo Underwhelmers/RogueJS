@@ -1,0 +1,33 @@
+body {
+  margin: 0; 
+  padding: 20px; 
+  background: #111; 
+  color: #eee; 
+  font-family: monospace;
+}
+.maindiv {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+canvas {
+  border: 2px solid #444;
+  image-rendering: pixelated; 
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background: #000;
+}
+pre {
+  width: 100%;
+  height: 600px;
+  overflow-y: auto;
+  background: #000;
+  color: #ccc;
+  border: 2px solid #333;
+  white-space: pre-wrap;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.info { margin-top: 10px; font-size: 14px; }
