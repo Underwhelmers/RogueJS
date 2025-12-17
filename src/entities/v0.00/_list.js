@@ -7,6 +7,7 @@ const ENTITIES_JS_FILES = [
 
   'interactions/enemy.js',
   'interactions/environment.js',
+  'descriptions/goblin_values_lists.js',
 ];
 
 ScriptLibrary.files = ENTITIES_JS_FILES
