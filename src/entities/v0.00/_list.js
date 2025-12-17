@@ -1,0 +1,14 @@
+const ENTITIES_REL_PATH = 'entities/v0.00/';
+const ENTITIES_JS_FILES = [
+  'down_ladder.js',
+  'goblin.js',
+  'player.js',
+  'tree.js',
+
+  'interactions/enemy.js',
+  'interactions/environment.js',
+];
+
+ScriptLibrary.files = ENTITIES_JS_FILES
+  .map((fil) => ENTITIES_REL_PATH + fil)
+  .concat(ScriptLibrary.files);

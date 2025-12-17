@@ -14,6 +14,9 @@ function spawn_goblin(engine, pos) {
       detail: goblin_skin_detail.pull()
     }
   });
+  ecs.add(id,'body', {
+    
+  });
   return id
 }
 
