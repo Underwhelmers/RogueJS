@@ -8,6 +8,8 @@ function spawn_player(engine, pos) {
   ecs.add(id, 'blocks', {});
 
   let shaft = new Shaft();
+  shaft.length = 2.0;
+  shaft.width = 2.0;
   shaft.randomize(0.5);
 
   ecs.add(id, 'shaft', { shaft });

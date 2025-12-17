@@ -18,6 +18,15 @@ class Shaft {
 }
 
 class Penis {
+  constructor() {
+    this.nouns = new ValueBag([
+      "dick",
+      "shaft",
+      "manhood",
+      "rod",
+      "penis",
+    ]);
+  }
   compare_for_tags(cav, shaf, pen) {
     return [];
   }
@@ -27,6 +36,11 @@ class Knot {
   constructor() {
     this.start = 0.7;
     this.end = 0.98;
+    this.nouns = new ValueBag([
+      "knotted dick",
+      "swollen knot",
+      "dog-like dick",
+    ]);
   }
   
   compare_for_tags(cav, shaf, pen) {

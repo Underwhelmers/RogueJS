@@ -53,6 +53,18 @@ class Vagina {
       "deepest-kiss":"cervix-kiss",
       "pushing-thought":"cervix-penetration",
     };
+    
+    this.nouns = new ValueBag([
+      "vagina",
+      "pussy",
+      "coochie",
+      "kitty",
+      "slit",
+      "birth-hole",
+      "cunt",
+      "snatch",
+      "hoo-ha"
+    ]);
   }
   
   replace_tags(tags) {
@@ -75,6 +87,16 @@ class Rectum {
       "deepest-kiss":"reaching-fold",
       "pushing-thought":"rearanging-guts",
     };
+    this.nouns = new ValueBag([
+      "asshole",
+      "anus",
+      "backdoor",
+      "chocolate starfish",
+      "brown eye",
+      "ass-pussy",
+      "rosebud",
+      "shithole",
+    ]);
   }
   
   replace_tags(tags) {
@@ -99,7 +121,15 @@ class Mouth {
       "pushing-thought":"throat-fucking",
       "tearing":"suffocating",
       "stuck":"jaw-locking",
-    };    
+    };
+    
+    this.nouns = new ValueBag([
+      "mouth",
+      "throat",
+      "face-pussy",
+      "maw",
+      "yapper"
+    ]);
   }
   
   replace_tags(tags) {
