@@ -39,7 +39,7 @@ class Knot {
     this.nouns = new ValueBag([
       "knotted dick",
       "swollen knot",
-      "dog-like dick",
+      "animalistic dick",
     ]);
   }
   
