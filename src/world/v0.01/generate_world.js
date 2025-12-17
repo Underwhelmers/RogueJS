@@ -18,17 +18,13 @@ function _engine_generateMap(engine) {
     }
     
     for (let i = 0; i < 8; i++)
-      spawn_tree(engine, _pullRandomFloor(floors));
+      spawn_tree(engine, pull_random(floors));
     
     for (let i = 0; i < 3; i++)
-      spawn_goblin(engine, _pullRandomFloor(floors));
+      spawn_goblin(engine, pull_random(floors));
   }
 }
 
 function _engine_spawnEntities(engine) {
   engine.playerId = spawn_player(engine, {x:0, y:0});
-}
-
-function _pullRandomFloor(floors) {
-  return floors.splice(Math.floor(Math.random() * floors.length), 1)[0];
 }

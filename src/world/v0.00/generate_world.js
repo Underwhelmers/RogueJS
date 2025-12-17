@@ -54,14 +54,10 @@ function _engine_spawnEntities(engine) {
     }
   }
   
-  engine.playerId = spawn_player(engine, _pullRandomFloor(floors));
+  engine.playerId = spawn_player(engine, pull_random(floors));
   
   for (let i = 0; i < 8; i++)
-    spawn_goblin(engine, _pullRandomFloor(floors));
+    spawn_goblin(engine, pull_random(floors));
   
-  spawn_downLadder(engine, _pullRandomFloor(floors));
-}
-
-function _pullRandomFloor(floors) {
-  return floors.splice(Math.floor(Math.random() * floors.length), 1)[0];
+  spawn_downLadder(engine, pull_random(floors));
 }

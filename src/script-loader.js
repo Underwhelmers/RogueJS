@@ -23,6 +23,7 @@ ScriptLibrary.files = [
   'core/consts.js',
   'core/ecs.js',
   'core/engine_asks.js',
+  'core/utilities.js',
   
   'systems/enemy_ai.js',
   'systems/render.js',
