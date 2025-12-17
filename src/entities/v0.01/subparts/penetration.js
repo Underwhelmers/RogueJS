@@ -1,19 +1,17 @@
 class Penetration {
   constructor() {
-    this.progress = 0.0;      // 0.0 = just the tip, 1.0 = balls-deep / throat fully seated
-    this.friction = 1.0;      // 1.0 = dry raw drag, lower = slick heaven/hell
-    this.numbness = 0.0;      // 0.0 = every ridge feels electric, 1.0 = completely desensitized
-    this.speed = 0.0;         // Current thrust speed (negative = pulling out, positive = slamming in)
-    this.lastDepth = 0.0;     // For detecting changes in depth this stroke
+    this.progress = 0.0;
+    this.friction = 1.0;
+    this.numbness = 0.0;
+    this.speed = 0.0;   
+    this.lastDepth = 0.0
   }
 
-  // Call this with whatever tags your encounter system just generated
   interpret_tags(cav, shaf, tags) {
     let narratives = [];
     const cavnouns = cav.type.nouns;
     const shafnouns = shaf.shape.nouns;
 
-    // Reset transient state
     this.lastDepth = this.progress;
 
     // === FRICTION & LUBE EFFECTS ===
@@ -89,7 +87,7 @@ class Penetration {
     }
     if (tags.includes('teasing')) {
       narratives.push("You're just teasing—shallow dips, circling the entrance, never giving them the depth they crave (or dread).");
-      this.numbness = Math.max(0, this.numbness - 0.1); // Teasing keeps sensitivity high
+      this.numbness = Math.max(0, this.numbness - 0.1);
     }
 
     // === KNOTTING (because why not go full monster-fuck) ===
