@@ -1,6 +1,7 @@
 const ScriptLibrary = {
   async loadFrom(relPath) {
-    for (const src of this.files) {
+    while(this.files.length > 0) {
+      const src = this.files.splice(0, 1)[0];
       await this.addScript(relPath+src);
     }
     console.log('All scripts loaded.');
@@ -38,8 +39,8 @@ ScriptLibrary.files = [
   'player/debugging.js',
   'player/base_actions.js',
   'player/text_display.js',
-  'player/interactions/enemy.js',
-  'player/interactions/environment.js',
+
+  'player/interactions/v0.00/_list.js',
   
   'world/v0.01/generate_world.js',
   'world/v0.01/world_generator.js',
