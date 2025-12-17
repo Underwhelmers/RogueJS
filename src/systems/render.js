@@ -1,3 +1,8 @@
+const DARKVISIBLE = new Set([
+  '#','T'
+]);
+
+
 class SystemRender {
   process(engine) {
     this.computeFov(engine);
@@ -7,12 +12,18 @@ class SystemRender {
   
   computeFov(engine) {
     engine.fov.clear();
-    const playerPos = engine.ecs.get(engine.playerId, 'position');
-    for (let y = 0; y < MAP_H; y++) {
-      for (let x = 0; x < MAP_W; x++) {
-        if (engine.isVisible(playerPos.x, playerPos.y, x, y)) {
-          engine.fov.add(`${x},${y}`);
-          engine.explored.add(`${x},${y}`);
+    const pos = engine.ecs.get(engine.playerId, 'position');
+    
+    const xini = Math.floor(pos.x-SCR_W/2);
+    const yini = Math.floor(pos.y-SCR_H/2);
+    const xfin = Math.ceil(pos.x+SCR_W/2);
+    const yfin = Math.ceil(pos.y+SCR_H/2);
+    
+    for (let y = yini; y < yfin; y++) {
+      for (let x = xini; x < xfin; x++) {
+        if (engine.isVisible(pos.x, pos.y, x, y)) {
+          engine.fov.add(`${x};${y}`);
+          engine.explored.add(`${x};${y}`);
         }
       }
     }
@@ -20,8 +31,8 @@ class SystemRender {
 
   updateCamera(engine) {
     const pos = engine.ecs.get(engine.playerId, 'position');
-    engine.camera.x = pos.x - Math.floor(SCR_W / 2);// Math.max(0, Math.min(MAP_W - SCR_W, pos.x - Math.floor(SCR_W / 2)));
-    engine.camera.y = pos.y - Math.floor(SCR_H / 2);//Math.max(0, Math.min(MAP_H - SCR_H, pos.y - Math.floor(SCR_H / 2)));
+    engine.camera.x = pos.x - Math.floor(SCR_W / 2);
+    engine.camera.y = pos.y - Math.floor(SCR_H / 2);
   }
 
   render(engine) {
@@ -52,7 +63,7 @@ class SystemRender {
     const wy = engine.camera.y + sy;
     
     const tile = engine.get_tile(wx,wy);
-    const key = `${wx},${wy}`;
+    const key = `${wx};${wy}`;
     let visible = engine.fov.has(key);
     let char = tile.char;
     let fg = visible ? tile.fg.replace('DARK', 'LIGHT') : COLORS.DARK_FLOOR;
@@ -65,14 +76,19 @@ class SystemRender {
   }
   
   darkenExplored(engine, key) {
-    const [wx, wy] = key.split(',').map(Number);
+    const [wx, wy] = key.split(';').map(Number);
     const sx = wx - engine.camera.x;
     const sy = wy - engine.camera.y;
     if (engine.fov.has(key)) return;
     const tile = engine.get_tile(wx,wy);
     engine.ctx.fillStyle = COLORS.DARK_FLOOR;
     engine.ctx.fillRect(sx * CELL_W, sy * CELL_H, CELL_W, CELL_H);
-    engine.ctx.fillStyle = tile.char === '#' ? COLORS.DARK_WALL : COLORS.DARK_FLOOR;
+    
+    engine.ctx.fillStyle = COLORS.DARK_FLOOR;
+    
+    if (DARKVISIBLE.has(tile.char))
+      engine.ctx.fillStyle = COLORS.DARK_WALL;
+    
     engine.ctx.fillText(tile.char, sx * CELL_W + CELL_W / 2, sy * CELL_H + CELL_H / 2);
   }
   
@@ -85,7 +101,7 @@ class SystemRender {
     if (sx < 0 || sy < 0) return;
     if (sx >= SCR_W || sy >= SCR_H) return;
     
-    const key = `${pos.x},${pos.y}`;
+    const key = `${pos.x};${pos.y}`;
     if (!engine.fov.has(key)) return;
     
     engine.ctx.fillStyle = ren.bg || COLORS.DARK_FLOOR;

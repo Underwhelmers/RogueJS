@@ -6,10 +6,14 @@ const MAP_W = 100;
 const MAP_H = 60;
 const FOV_RADIUS = 12;
 
+const CHUNK_W = 30; // SCR_W/2 +5
+const CHUNK_H = 20; // SCR_H/2 +5
+
+
 const COLORS = {
     BLACK: '#000000',
-    DARK_WALL: '#3a3a3a',
+    DARK_WALL: '#9a9a9a',
     DARK_FLOOR: '#4a4a4a',
     LIGHT_WALL: '#b9b9b9',
-    LIGHT_FLOOR: '#e8e8e8',
+    LIGHT_FLOOR: '#ccc',
 };

@@ -17,19 +17,19 @@ const ScriptLibrary = {
   }
 };
 
-
 // Sensible al orden.
 // Mantener dependencias cargadas en orden correcto.
 ScriptLibrary.files = [
   'core/consts.js',
-  'core/BSPNode.js',
   'core/ecs.js',
+  'core/engine_asks.js',
   
   'systems/enemy_ai.js',
   'systems/render.js',
   
   'entities/goblin.js',
   'entities/player.js',
+  'entities/tree.js',
   'entities/down_ladder.js',
   
   'player/input.js',
@@ -39,11 +39,9 @@ ScriptLibrary.files = [
   'player/interactions/enemy.js',
   'player/interactions/environment.js',
   
-  'setup/entities.js',
-  'setup/map.js',
+  'world/v0.01/generate_world.js',
+  'world/v0.01/world_generator.js',
   
-  'engine/asks.js',
-  'engine/base.js',
-  
+  'core/engine.js',
   'init.js',
 ];

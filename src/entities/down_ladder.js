@@ -1,4 +1,5 @@
-function spawn_downLadder(ecs, pos) {
+function spawn_downLadder(engine, pos) {
+  const ecs = engine.ecs;
   const id = ecs.create();
   ecs.add(id, 'position', { x: pos.x, y: pos.y });
   ecs.add(id, 'renderable', { char: 'L', fg: COLORS.BLACK, bg: COLORS.LIGHT_FLOOR });

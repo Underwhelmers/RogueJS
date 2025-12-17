@@ -1,4 +1,5 @@
-function spawn_player(ecs, pos) {
+function spawn_player(engine, pos) {
+  const ecs = engine.ecs;
   const id = ecs.create();
   ecs.add(id, 'position', { x: pos.x, y: pos.y });
   ecs.add(id, 'renderable', { char: '@', fg: '#ff0000', bg: null });
