@@ -1,5 +1,8 @@
 function interaction_attack(engine, target) {
-  open_menu('A seductive goblin appears, and looks at you with thirst in their eyes.');
+  const aspect = engine.ecs.get(target, 'aspect');
+  const desc = `A goblin with ${aspect.skin.detail} in ${aspect.skin.hue} skin. And ${aspect.uniqueness}.`;
+  
+  open_menu(desc);
   add_menu_option('f',' [F] Lick their face.'   , () => effect_attack(engine,target));
   add_menu_option('c',' [C] Lick their crotch.' , () => effect_attack(engine,target));
   add_menu_option('a',' [A] Lick their anus.'   , () => effect_attack(engine,target));
