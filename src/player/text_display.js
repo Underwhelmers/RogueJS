@@ -25,7 +25,8 @@ function close_menu() {
 }
 
 function add_menu_option(optionkey, optiontext, func) {
-  menu_options[optionkey] = func;
+  menu_options[optionkey.toUpperCase()] = func;
+  menu_options[optionkey.toLowerCase()] = func;
   menu_text += '\n ' + optiontext;
   _log_display(menu_text);
 }

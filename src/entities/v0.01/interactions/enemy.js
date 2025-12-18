@@ -26,6 +26,7 @@ function effect_attack(engine, target, orifice) {
   log_text('----------------');
   for (const it of narrative)
     log_text(it);
+  log_text('');
   log_text('And aftar that they fall satisfied.');
   engine.ecs.remove(target);
 

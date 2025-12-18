@@ -1,3 +1,8 @@
+const tagPuller = new VariedTagPuller({
+  memorySize: 4,
+  maxTries: 8
+});
+
 function penetration_interpret_tags(cav, shaf, pen, tags) {
   const narratives = [];
   const params = {
@@ -6,19 +11,22 @@ function penetration_interpret_tags(cav, shaf, pen, tags) {
   };
   
   // === All active tags ===
-  for (const tag of tags) {
-    if (!PENETRATION_LINES[tag]) continue;
+  const chosentags = tagPuller.multipull(
+    2, tags, tag => PENETRATION_LINES[tag]
+  );
+
+  if (chosentags.length === 0) 
+    return ["It slides in and out... somehow."];
+
+  for (const tag of chosentags) {
     let line = PENETRATION_LINES[tag].pull();
-    
     for (const parm in params) {
-      while (line.includes(parm)) 
+      while (line.includes(parm))
         line = line.replace(parm, params[parm].pull());
     }
-    
     narratives.push(line);
   }
-  
-  return narratives.length ? narratives : ["It slides in and out... somehow."];
+  return narratives;
 }
 
 const PENETRATION_LINES = {

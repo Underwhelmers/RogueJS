@@ -25,7 +25,9 @@ ScriptLibrary.files = [
   'core/ecs.js',
   'core/engine_asks.js',
   'core/utilities.js',
+
   'core/value-bag.js',
+  'core/varied-tag-puller.js',
   
   'systems/enemy_ai.js',
   'systems/render.js',
