@@ -8,13 +8,15 @@ function entities_files() {
 
     'subparts/cavity.js',
     'subparts/shaft.js',
-    'subparts/penetration.js',
 
     'interactions/enemy.js',
     'interactions/environment.js',
 
-    'descriptions/for_penetration.js',
     'descriptions/goblin_values_lists.js',
+
+    'penetration/class.js',
+    'penetration/tags.js',
+    'penetration/descriptor.js',
   ];
 
   ScriptLibrary.files = JS_FILES
