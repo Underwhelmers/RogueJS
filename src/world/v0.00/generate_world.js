@@ -6,12 +6,9 @@ function setup_world_generation(engine) {
 }
 
 function _engine_get_tile(engine, x, y) {
-  if (x < 0 || y < 0) 
-    return { blocked: true, char: '#', fg: COLORS.DARK_WALL, bg: COLORS.BLACK };
-  if (engine.world.tiles.length <= y)
-    return { blocked: true, char: '#', fg: COLORS.DARK_WALL, bg: COLORS.BLACK };
-  if (engine.world.tiles[y].length <= x)
-    return { blocked: true, char: '#', fg: COLORS.DARK_WALL, bg: COLORS.BLACK };
+  if (x < 0 || y < 0) return WorldTiles.WALL;
+  if (engine.world.tiles.length <= y) return WorldTiles.WALL;
+  if (engine.world.tiles[y].length <= x) return WorldTiles.WALL;
   
   return engine.world.tiles[y][x];
 }
@@ -29,12 +26,9 @@ function _engine_generateMap(engine) {
   // Init walls
   engine.world.tiles = Array.from(
     { length: MAP_H },
-    () => Array(MAP_W).fill({
-      blocked: true,
-      char: '#',
-      fg: COLORS.DARK_WALL,
-      bg: COLORS.BLACK
-    })
+    () => Array(MAP_W).fill(
+      WorldTiles.WALL
+    )
   );
 
   // Simple BSP

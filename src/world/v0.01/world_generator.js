@@ -3,13 +3,13 @@ class SystemWorldGenerator {
     this.chunks = {};
   }
 
-  process(engine) {
-    //const playerPos = engine.ecs.get(engine.playerId, 'position');
-  }
-
   get_tile(x,y) {
     const chunk = this.get_chunk_for(x,y);
     return chunk.get(x,y);
+  }
+  set_tile(x,y,data) {
+    const chunk = this.get_chunk_for(x,y);
+    return chunk.set(x,y,data);
   }
 
   get_chunk_for(x,y) {
@@ -96,15 +96,14 @@ function create_chunk(key, chnk) {
   
   for (let y = 0; y < CHUNK_H; y++) {
     for (let x = 0; x < CHUNK_W; x++) {
-      chnk.tiles[y][x] = {
-        blocked: false, char: '.',
-        fg: COLORS.LIGHT_FLOOR,
-        bg: COLORS.BLACK
-      };
+      chnk.tiles[y][x] = WorldTiles.FLOOR;
     }
   }
   
   chnk.get = (x,y) => {
     return chnk.tiles[y-chnk.yoff][x-chnk.xoff];
+  };
+  chnk.set = (x,y,data) => {
+    chnk.tiles[y-chnk.yoff][x-chnk.xoff] = data;
   };
 }

@@ -50,4 +50,7 @@ class Engine {
   get_tile(x,y) {
     return this.world.get_tile(x,y);
   }
+  set_tile(x,y,data) {
+    return this.world.set_tile(x,y,data);
+  }
 }

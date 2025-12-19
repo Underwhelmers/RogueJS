@@ -16,4 +16,6 @@ const COLORS = {
     DARK_FLOOR: '#4a4a4a',
     LIGHT_WALL: '#b9b9b9',
     LIGHT_FLOOR: '#ccc',
+    TREE_FRONT: '#00aa00',
+    TREE_BACK: '#895129',
 };

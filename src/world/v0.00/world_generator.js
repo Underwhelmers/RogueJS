@@ -90,12 +90,7 @@ function carveRoom(tiles, room) {
   
   for (let y = room.y; y < maxy; y++) {
     for (let x = room.x; x < maxx; x++) {
-      tiles[y][x] = {
-        blocked: false,
-        char: '.',
-        fg: COLORS.LIGHT_FLOOR,
-        bg: COLORS.LIGHT_FLOOR
-      };
+      tiles[y][x] = WorldTiles.FLOOR;
     }
   }
 }
@@ -122,22 +117,12 @@ function carveCorridor(tiles, roomA, roomB) {
 
 function carveHorizontal(tiles, x1, x2, y) {
   for (let x = Math.min(x1, x2); x <= Math.max(x1, x2); x++) {
-    tiles[y][x] = {
-      blocked: false,
-      char: '.',
-      fg: COLORS.LIGHT_FLOOR,
-      bg: COLORS.LIGHT_FLOOR
-    };
+    tiles[y][x] = WorldTiles.FLOOR;
   }
 }
 
 function carveVertical(tiles, y1, y2, x) {
   for (let y = Math.min(y1, y2); y <= Math.max(y1, y2); y++) {
-    tiles[y][x] = {
-      blocked: false,
-      char: '.',
-      fg: COLORS.LIGHT_FLOOR,
-      bg: COLORS.LIGHT_FLOOR
-    };
+    tiles[y][x] = WorldTiles.FLOOR;
   }
 }

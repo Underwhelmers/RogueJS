@@ -1,5 +1,6 @@
 const DARKVISIBLE = new Set([
-  '#','T'
+  WorldTiles.WALL.char,
+  WorldTiles.TREE.char,
 ]);
 
 

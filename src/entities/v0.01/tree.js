@@ -1,7 +1,5 @@
 function spawn_tree(engine, pos) {
-  const tile = engine.get_tile(pos.x,pos.y);
-  tile.blocked = true;
-  tile.char = 'T';
+  engine.set_tile(pos.x,pos.y,  WorldTiles.TREE);
   
   const ecs = engine.ecs;
   const id = ecs.create();

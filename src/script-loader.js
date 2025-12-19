@@ -22,24 +22,25 @@ const ScriptLibrary = {
 // Mantener dependencias cargadas en orden correcto.
 ScriptLibrary.files = [
   'core/consts.js',
-  'core/ecs.js',
-  'core/engine_asks.js',
+  'core/engine-asks.js',
   'core/utilities.js',
-
-  'core/value-bag.js',
-  'core/varied-tag-puller.js',
   
-  'systems/enemy_ai.js',
+  'core/classes/ecs.js',
+  'core/classes/value-bag.js',
+  'core/classes/varied-tag-puller.js',
+  'world/world-tiles.js', // Almost core
+  
+  'systems/enemy-ai.js',
   'systems/render.js',
-  
+
   'player/input.js',
   'player/debugging.js',
-  'player/base_actions.js',
-  'player/text_display.js',
+  'player/base-actions.js',
+  'player/text-display.js',
   
   'entities/v0.01/_list.js',
-  'world/v0.01/_list.js',
+  'world/v0.00/_list.js',
   
-  'core/engine.js',
+  'core/classes/engine.js',
   'init.js',
 ];
