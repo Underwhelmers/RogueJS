@@ -104,9 +104,11 @@ class SystemRender {
     
     const key = `${pos.x};${pos.y}`;
     if (!engine.fov.has(key)) return;
-    
-    engine.ctx.fillStyle = ren.bg || COLORS.DARK_FLOOR;
-    engine.ctx.fillRect(sx * CELL_W, sy * CELL_H, CELL_W, CELL_H);
+
+    if (ren.bg) {
+      engine.ctx.fillStyle = ren.bg;
+      engine.ctx.fillRect(sx * CELL_W, sy * CELL_H, CELL_W, CELL_H);
+    }
     engine.ctx.fillStyle = ren.fg;
     engine.ctx.fillText(ren.char, sx * CELL_W + CELL_W / 2, sy * CELL_H + CELL_H / 2);
   }
