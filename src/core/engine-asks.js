@@ -5,15 +5,20 @@ function _engine_isVisible(engine, px, py, x, y) {
   if (dist <= 0) return true;
   if (dist > FOV_RADIUS) return false;
   
-  let seeobs = true;
+  let obscured = 0;
   for (let i = 1; i <= dist; i++) {
     const cx = px + Math.round((dx * i) / dist);
     const cy = py + Math.round((dy * i) / dist);
     const tile = engine.get_tile(cx, cy);
-    if (tile.blocked || !seeobs) {
-      if (!seeobs) return false;
-      seeobs = false;
+    
+    if (tile.opacity) {
+      obscured += tile.opacity;
+    } else if (obscured) {
+      return false;
     }
+    
+    if (obscured > 1)
+      return false;
   }
   return true;
 }
