@@ -19,3 +19,7 @@ function shuffle_array(array) {
     array[idx] = temp;
   }
 }
+
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}

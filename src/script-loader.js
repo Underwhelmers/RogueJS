@@ -26,6 +26,7 @@ ScriptLibrary.files = [
   'core/utilities.js',
   
   'core/classes/ecs.js',
+  'core/classes/perlin.js',
   'core/classes/value-bag.js',
   'core/classes/varied-tag-puller.js',
   'world/world-tiles.js', // Almost core
@@ -39,7 +40,7 @@ ScriptLibrary.files = [
   'player/text-display.js',
   
   'entities/v0.01/_list.js',
-  'world/v0.00/_list.js',
+  'world/v0.02/_list.js',
   
   'core/classes/engine.js',
   'init.js',
