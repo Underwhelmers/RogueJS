@@ -24,6 +24,11 @@ class ECS {
     return this.components.has(type) && this.components.get(type).has(id);
   }
 
+  remove_comp(id, type) {
+    if (!this.components.has(type)) return false;
+    return this.components.get(type).delete(id);
+  }
+
   remove(id) {
     this.entities.delete(id);
     for (let map of this.components.values()) {
