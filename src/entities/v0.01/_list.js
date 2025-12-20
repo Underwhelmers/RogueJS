@@ -6,11 +6,15 @@ function entities_files() {
     'player.js',
     'tree.js',
 
+    'base/tile_interactions.js',
+    'base/player_entity_interactions.js',
+
     'subparts/cavity.js',
     'subparts/shaft.js',
 
     'interactions/enemy.js',
     'interactions/environment.js',
+    'interactions/cut_down_tree.js',
 
     'descriptions/goblin_values_lists.js',
 

@@ -5,6 +5,9 @@ const ENTITIES_JS_FILES = [
   'player.js',
   'tree.js',
 
+  'base/tile_interactions.js',
+  'base/player_entity_interactions.js',
+
   'interactions/enemy.js',
   'interactions/environment.js',
   'descriptions/goblin_values_lists.js',

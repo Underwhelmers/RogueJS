@@ -11,13 +11,12 @@ function playerTryMove(engine, dx, dy) {
 
 function player_interact(engine, x, y) {
   let target = engine.ecs.get_at(x, y);
-  if (target.length == 0) return;
+  if (target.length == 0) {
+    tile_interaction(engine, x,y);
+    return;
+  }
   
   for (const id of target) {
-    const inter = engine.ecs.get(id,'interactible');
-    switch (inter.type) {
-      case 'attack'    : interaction_attack(engine, id);     break;
-      case 'next_level': interaction_next_level(engine, id); break;
-    }
+    player_entity_interaction(engine, id);
   }
 }
