@@ -12,6 +12,7 @@ function interaction_attack(engine, target) {
 function effect_attack(engine, target, orifice) {
   const attacker = engine.ecs.get(engine.playerId, 'shaft').shaft;
   const defender = engine.ecs.get(target, 'body');
+  const pos = engine.ecs.get(target, 'position');
 
   const cavity = effect_attack_get_cavity(defender, orifice);
 
@@ -27,9 +28,17 @@ function effect_attack(engine, target, orifice) {
   for (const it of narrative)
     log_text(it);
   log_text('');
-  log_text('And aftar that they fall satisfied.');
-  engine.ecs.remove(target);
+  
 
+  log_text('And aftar that they fall satisfied.');
+  
+  if (rng_check(0.5) && engine.ecs.has(target,'held_loot')) {
+    const loot = engine.ecs.get(target, 'held_loot')
+    spawn_loot(engine,pos, loot);
+  }
+  
+  engine.ecs.remove(target);
+  
   close_menu();
 }
 

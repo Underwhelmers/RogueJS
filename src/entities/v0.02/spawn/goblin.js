@@ -8,6 +8,12 @@ function spawn_goblin(engine, pos) {
   ecs.add(id, 'interactible', { 
     eff:() => interaction_attack(engine,id)
   });
+  ecs.add(id, 'held_loot', {
+    desc: "an axe on the floor",
+    vals: {
+      axe: { durability: Math.floor(Math.random()*10)+1 }
+    }
+  });
 
   ecs.add(id, 'ai', {});
   ecs.add(id, 'blocks', {});

@@ -15,11 +15,5 @@ function spawn_player(engine, pos) {
 
   ecs.add(id, 'shaft', { shaft });
 
-  spawn_door(engine,{x:pos.x,y:pos.y+1});
-  spawn_door(engine,{x:pos.x,y:pos.y-1});
-  spawn_door(engine,{x:pos.x+1,y:pos.y});
-  spawn_door(engine,{x:pos.x-1,y:pos.y});
-  //spawn_loot(engine,{x:pos.x,y:pos.y+1}, 'axe', { durability: 5 });
-
   return id;
 }

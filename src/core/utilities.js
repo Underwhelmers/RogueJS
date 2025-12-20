@@ -23,3 +23,7 @@ function shuffle_array(array) {
 function lerp(a, b, t) {
   return a + (b - a) * t;
 }
+
+function rng_check(chance) {
+  return Math.random() <= chance;
+}
