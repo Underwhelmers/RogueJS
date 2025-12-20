@@ -1,0 +1,40 @@
+function spawn_goblin(engine, pos) {
+  const ecs = engine.ecs;
+  const id = ecs.create();
+  ecs.add(id, 'position', { x: pos.x, y: pos.y });
+  ecs.add(id, 'renderable', { char: 'g', fg: '#00ff00', bg: null });
+  ecs.add(id, 'fighter', { hp: 10, maxHp: 10, atk: 3, def: 0 });
+  
+  ecs.add(id, 'interactible', { 
+    eff:() => interaction_attack(engine,id)
+  });
+
+  ecs.add(id, 'ai', {});
+  ecs.add(id, 'blocks', {});
+  ecs.add(id, 'aspect', {
+    uniqueness: goblin_uniqueness.pull(),
+    skin: {
+      hue: goblin_skin_hue.pull(),
+      detail: goblin_skin_detail.pull()
+    }
+  });
+
+  const body = generate_goblin_body(ecs,id);
+  ecs.add(id,'body', body);
+
+  return id
+}
+
+function generate_goblin_body(ecs, id) {
+  const body = {
+    vagina: new Cavity(),
+    anus: new Cavity(),
+    mouth: new Cavity(),
+  };
+
+  body.vagina.quick_setup(0.4,0.5,0.1,2.1,'vagina').randomize(0.2);
+  body.anus.quick_setup(0.8,0.2,0.1,2.1,'anus').randomize(0.2);
+  body.mouth.quick_setup(0.2,0.7,0.9,2.0,'mouth').randomize(0.2);
+
+  return body;
+}

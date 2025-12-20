@@ -39,7 +39,7 @@ ScriptLibrary.files = [
   'player/base-actions.js',
   'player/text-display.js',
   
-  'entities/v0.01/_list.js',
+  'entities/v0.02/_list.js',
   'world/v0.02/_list.js',
   
   'core/classes/engine.js',

@@ -18,4 +18,5 @@ const COLORS = {
     LIGHT_FLOOR: '#ccc',
     TREE_FRONT: '#00aa00',
     TREE_BACK: '#895129',
+    GOLD: '#d4af37',
 };
