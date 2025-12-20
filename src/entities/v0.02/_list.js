@@ -1,16 +1,17 @@
 function entities_files() {
   const REL_PATH = 'entities/v0.02/';
   const JS_FILES = [
-    'down_ladder.js',
-    'goblin.js',
-    'player.js',
-    'tree.js',
-    'loot.js',
-    'door.js',
+    'spawn/down_ladder.js',
+    'spawn/goblin.js',
+    'spawn/player.js',
+    'spawn/tree.js',
+    'spawn/loot.js',
+    'spawn/door.js',
 
     'interactions/for_tiles.js',
     'interactions/player_entity.js',
     'interactions/attack.js',
+    'interactions/generic_effects.js',
 
     'subparts/cavity.js',
     'subparts/shaft.js',
