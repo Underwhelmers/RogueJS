@@ -35,7 +35,6 @@ ScriptLibrary.files = [
   'systems/render.js',
 
   'player/input.js',
-  'player/debugging.js',
   'player/base-actions.js',
   'player/text-display.js',
   
