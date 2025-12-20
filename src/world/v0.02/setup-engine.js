@@ -9,8 +9,10 @@ function setup_world_generation(engine) {
 function generate_world(engine) {
   engine.world.for_new_chunk = function (chunk) {
     const floors = generate_river_path(engine, chunk);
-    for (let i = 0; i < 3 &&  floors.length > 0; i++)
-      spawn_goblin(engine, pull_random(floors));
+    if (Math.random() < 0.25) {
+      const pos = pull_random(floors);
+      if (pos) spawn_goblin(engine, pos);
+    }
   }
   
   engine.playerId = spawn_player(engine, {x:0, y:0});
