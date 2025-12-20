@@ -68,7 +68,7 @@ class SystemRender {
     let visible = engine.fov.has(key);
     let char = tile.char;
     let fg = visible ? tile.fg.replace('DARK', 'LIGHT') : COLORS.DARK_FLOOR;
-    let bg = visible ? COLORS.LIGHT_FLOOR : COLORS.DARK_FLOOR;
+    let bg = visible ? tile.bg : COLORS.DARK_FLOOR;
 
     engine.ctx.fillStyle = bg;
     engine.ctx.fillRect(sx * CELL_W, sy * CELL_H, CELL_W, CELL_H);
@@ -91,7 +91,7 @@ class SystemRender {
       engine.ctx.fillStyle = COLORS.DARK_WALL;
     
     engine.ctx.fillText(tile.char, sx * CELL_W + CELL_W / 2, sy * CELL_H + CELL_H / 2);
-  }
+  } 
   
   renderEntity(engine, id) {
     const pos = engine.ecs.get(id, 'position');

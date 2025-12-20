@@ -11,7 +11,7 @@ const WorldTiles = {
     return {
       blocked: false, char: '.',
       fg: COLORS.LIGHT_FLOOR,
-      bg: COLORS.BLACK,
+      bg: COLORS.LIGHT_FLOOR,
       opacity: 0,
     };
   },
@@ -19,7 +19,7 @@ const WorldTiles = {
     return {
       blocked: true, char: '#',
       fg: COLORS.DARK_WALL,
-      bg: COLORS.BLACK,
+      bg: COLORS.LIGHT_FLOOR,
       opacity: 1,
     }
   }
