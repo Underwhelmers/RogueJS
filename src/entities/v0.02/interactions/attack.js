@@ -32,7 +32,7 @@ function effect_attack(engine, target, orifice) {
 
   log_text('And aftar that they fall satisfied.');
   
-  if (rng_check(0.5) && engine.ecs.has(target,'held_loot')) {
+  if (success(0.5) && engine.ecs.has(target,'held_loot')) {
     const loot = engine.ecs.get(target, 'held_loot')
     spawn_loot(engine,pos, loot);
   }

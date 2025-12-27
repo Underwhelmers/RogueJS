@@ -8,12 +8,17 @@ function spawn_player(engine, pos) {
   ecs.add(id, 'blocks', {});
   ecs.add(id, 'inventory', {});
 
-  let shaft = new Shaft();
-  shaft.length = 2.0;
-  shaft.width = 2.0;
-  shaft.randomize(0.5);
-
-  ecs.add(id, 'shaft', { shaft });
+  ecs.add(id, 'body', make_player_body());
 
   return id;
+}
+
+function make_player_body() {
+  const builder = new PhallusBuilder()
+    .with_size(BODY_SIZE.MEDIUM)
+    .with_parameter_variation(0.5)
+    .with_physonomy(BODY_PHYSONOMY.MONSTER_DICK)
+  ;
+
+  return builder.build();
 }

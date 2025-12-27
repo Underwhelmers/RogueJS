@@ -5,18 +5,21 @@ class CavityBuilder {
     this.physonomies = [];
   }
 
-  static make_cavities() {
+  static make_body() {
     return new CavityBuilder();
   }
 
   with_size(size) {
     this.size_scale = size.scale;
+    return this;
   }
-  randomized(amplitude) { 
+  with_parameter_variation(amplitude) { 
     this.rnd_amp = amplitude;
+    return this;
   }
   with_physonomy(phys) {
     this.physonomies.push(phys);
+    return this;
   }
 
 
@@ -31,7 +34,7 @@ class CavityBuilder {
     body.anus  .quick_setup(2.00 * this.scale, 0.50 * this.scale, 0.1, 1.125 * this.scale);
     body.mouth .quick_setup(0.50 * this.scale, 1.25 * this.scale, 0.9, 0.750 * this.scale);
     
-    for (phys in this.physonomies)
+    for (const phys of this.physonomies)
       phys.modify(body);
     
     body.vagina.randomize(this.rnd_amp);

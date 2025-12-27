@@ -1,34 +1,3 @@
-const tagPuller = new VariedTagPuller({
-  memorySize: 4,
-  maxTries: 8
-});
-
-function penetration_interpret_tags(cav, shaf, pen, tags) {
-  const narratives = [];
-  const params = {
-    '{cav}': cav.type.nouns,
-    '{shaf}': shaf.shape.nouns
-  };
-  
-  // === All active tags ===
-  const chosentags = tagPuller.multipull(
-    2, tags, tag => PENETRATION_LINES[tag]
-  );
-
-  if (chosentags.length === 0) 
-    return ["It slides in and out... somehow."];
-
-  for (const tag of chosentags) {
-    let line = PENETRATION_LINES[tag].pull();
-    for (const parm in params) {
-      while (line.includes(parm))
-        line = line.replace(parm, params[parm].pull());
-    }
-    narratives.push(line);
-  }
-  return narratives;
-}
-
 const PENETRATION_LINES = {
   'spreaded': new ValueBag([
     "Their {cav} stretches wide, greedily spread around the invading girth of your {shaf}.",
@@ -196,10 +165,13 @@ const PENETRATION_LINES = {
     "You dwarf them completely, your {shaf} turning their {cav} into a comically overstretched sleeve."
   ]),
   
-  /*
-  'drooling-mess': new ValueBag([
-    "They're a drooling, sloppy mess. Spit and precum dripping from their ruined {cav}.",
-    "Drool cascades from their mouth, evidence of total overwhelm."
+  'edging': new ValueBag([
+    "You relentlessly bully her {cav} with your {shaf}. Bringing them close to climax and making them ride the edge, in blissfull agony.",
+    "As they start to shake, for the approaching of their climax. You remove your {shaf} from their {cav}, letting the feeling flee before re-engaging."
   ]),
-  */
+  
+  'intimate': new ValueBag([
+    "As you use your {shaf} in their {cav}, you keep eye contact and hold them so close that you can feel their warmth.",
+    "As you keep face to face, inches from eachother. Your {shaf} makes their {cav} a mess of fluids and sounds.",
+  ]),
 };

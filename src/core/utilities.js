@@ -24,6 +24,6 @@ function lerp(a, b, t) {
   return a + (b - a) * t;
 }
 
-function rng_check(chance) {
+function success(chance) {
   return Math.random() <= chance;
 }

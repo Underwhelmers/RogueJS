@@ -1,53 +1,52 @@
-function interaction_intercourse(engine, target) {
+function interaction_intercourse(engine, target, hole) {
   const aspect = engine.ecs.get(target, 'aspect');
-  const params = engine.ecs.get(target, 'interactible');
 
-  const desc = `A goblin with ${aspect.uniqueness}. Stops and presents their ${params.targethole} for you to use.`;
+  const desc = `A goblin with ${aspect.uniqueness}. Stops and presents their ${hole} for you to use.`;
   
   open_menu(desc);
-  add_menu_option('u',` [U] Use their ${params.targethole}`, () => effect_intercourse_option1(engine,target,params.targethole))
+  add_menu_option('u',` [U] Use their ${hole}`, () => effect_intercourse_option1(engine,target,hole))
   add_menu_option('r',' [R] Reject the offer.', () => close_menu());
 }
 
 const chosenvals = [];
 function effect_intercourse_option1(engine, target, hole) {
   open_menu(`Her ${hole} is asking for your:`);
-  add_menu_option('h',' [H] Hand.'  , () => effect_intercourse_store_op1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.FINGER));
-  add_menu_option('d',' [D] Dick.'  , () => effect_intercourse_store_op1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.DICK));
-  add_menu_option('t',' [T] Tongue.', () => effect_intercourse_store_op1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.TONGUE));
-  add_menu_option('f',' [F] Fist.'  , () => effect_intercourse_store_op1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.FIST));
-  add_menu_option('o',' [O] Object.', () => effect_intercourse_store_op1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.TOY));
+  add_menu_option('h',' [H] Hand.'  , () => effect_intercourse_store_opt1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.FINGER));
+  add_menu_option('d',' [D] Dick.'  , () => effect_intercourse_store_opt1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.DICK));
+  add_menu_option('t',' [T] Tongue.', () => effect_intercourse_store_opt1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.TONGUE));
+  add_menu_option('f',' [F] Fist.'  , () => effect_intercourse_store_opt1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.FIST));
+  add_menu_option('o',' [O] Object.', () => effect_intercourse_store_opt1(engine, target, hole,INTERCOURSE_OPTS.TOOLS.TOY));
   add_menu_option('c',' [C] CLOSE.' , () => close_menu());
 }
-function effect_intercourse_store_op1(engine, target, hole, opt1) {
+function effect_intercourse_store_opt1(engine, target, hole, opt1) {
   chosenvals[0] = opt1;
   effect_intercourse_option2(engine, target, hole);
 }
 
 function effect_intercourse_option2(engine, target, hole) {
   open_menu(`How far wil you take it?:`);
-  add_menu_option('r',' [R] Rimming'    , effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.RIMMING));
-  add_menu_option('s',' [S] Shallow'    , effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.SHALLOW));
-  add_menu_option('m',' [M] Measured'   , effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.MEASURED));
-  add_menu_option('d',' [D] Deep'       , effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.DEEP));
-  add_menu_option('b',' [B] Beyond deep', effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.BEYOND_DEEP));
+  add_menu_option('r',' [R] Rimming'    , () => effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.RIMMING));
+  add_menu_option('s',' [S] Shallow'    , () => effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.SHALLOW));
+  add_menu_option('m',' [M] Measured'   , () => effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.MEASURED));
+  add_menu_option('d',' [D] Deep'       , () => effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.DEEP));
+  add_menu_option('b',' [B] Beyond deep', () => effect_intercourse_store_opt2(engine, target, hole, INTERCOURSE_OPTS.DEPTH.BEYOND_DEEP));
   add_menu_option('c',' [C] CLOSE.' , () => close_menu());
 }
-function effect_intercourse_store_op2(engine, target, hole, opt) {
+function effect_intercourse_store_opt2(engine, target, hole, opt) {
   chosenvals[1] = opt;
   effect_intercourse_option3(engine, target, hole);
 }
 
-function effect_intercourse_option3() {
+function effect_intercourse_option3(engine, target, hole) {
   open_menu(`What style will you use on them?:`);
-  add_menu_option('f',' [F] Fast.'    , effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.FAST));
-  add_menu_option('r',' [R] Rough.'   , effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.ROUGH));
-  add_menu_option('e',' [E] Edging.'  , effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.EDGING));
-  add_menu_option('n',' [N] Non-stop.', effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.NON_STOP));
-  add_menu_option('i',' [I] Intimate.', effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.INTIMATE));
+  add_menu_option('f',' [F] Fast.'    , () => effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.FAST));
+  add_menu_option('r',' [R] Rough.'   , () => effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.ROUGH));
+  add_menu_option('e',' [E] Edging.'  , () => effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.EDGING));
+  add_menu_option('n',' [N] Non-stop.', () => effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.NON_STOP));
+  add_menu_option('i',' [I] Intimate.', () => effect_intercourse_store_opt3(engine, target, hole, INTERCOURSE_OPTS.STYLE.INTIMATE));
   add_menu_option('c',' [C] CLOSE.' , () => close_menu());
 }
-function effect_intercourse_store_op3(engine, target, hole, opt) {
+function effect_intercourse_store_opt3(engine, target, hole, opt) {
   chosenvals[2] = opt;
   apply_effect_intercourse(engine, target, hole);
 }
@@ -67,7 +66,9 @@ function apply_effect_intercourse(engine, target, hole) {
   for (const it of narrative)
     log_text(it);
   log_text('');
-  
+
+
+  close_menu();  
 }
 
 function effect_intercourse_get_cavity(body, hole) {
@@ -77,9 +78,9 @@ function effect_intercourse_get_tool(body) {
   return body[chosenvals[0].tag];
 }
 
-function setup_penetration(shaft, cavity) {
+function setup_penetration(phallus, cavity) {
   const pen = new Penetration();
-  pen.progress = Math.max(cavity.depth * chosenvals[1].val, shaft .length);
+  pen.progress = Math.max(cavity.depth * chosenvals[1].val, phallus .length);
   pen.speed = pen.progress * 0.5;
   pen.friction = 0.2;
 
@@ -92,12 +93,13 @@ function setup_penetration(shaft, cavity) {
     pen.friction = 1.1;
   }
   else if (style == INTERCOURSE_OPTS.STYLE.EDGING) {
-
+    pen.tags.push('edging');
   }
   else if (style == INTERCOURSE_OPTS.STYLE.NON_STOP) {
-
+    pen.numbness = 0.6;
   }
   else if (style == INTERCOURSE_OPTS.STYLE.INTIMATE) {
-
+    pen.tags.push('intimate');
   }
+  return pen;
 }
