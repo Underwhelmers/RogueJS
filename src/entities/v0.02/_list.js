@@ -14,11 +14,12 @@ function entities_files() {
     'interactions/generic_effects.js',
 
     'subparts/shaft.js',
-    'subparts/cavities/cavity.js',
-    'subparts/cavities/factory.js',
-    'subparts/cavities/mouth.js',
-    'subparts/cavities/rectum.js',
-    'subparts/cavities/vagina.js',
+    'subparts/cavity/class.js',
+    'subparts/cavity/factory.js',
+    'subparts/cavity/builder.js',
+    'subparts/cavity/types/mouth.js',
+    'subparts/cavity/types/rectum.js',
+    'subparts/cavity/types/vagina.js',
 
     'descriptions/goblin_values_lists.js',
     'subparts/intercourse_setup.js',

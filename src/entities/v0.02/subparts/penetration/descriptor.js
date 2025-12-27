@@ -196,6 +196,16 @@ const PENETRATION_LINES = {
     "You dwarf them completely, your {shaf} turning their {cav} into a comically overstretched sleeve."
   ]),
   
+  'edging': new ValueBag([
+    "You relentlessly bully her {cav} with your {shaf}. Bringing them close to climax and making them ride the edge, in blissfull agony.",
+    "As they start to shake, for the approaching of their climax. You remove your {shaf} from their {cav}, letting the feeling flee before re-engaging."
+  ]),
+  
+  'intimate': new ValueBag([
+    "As you use your {shaf} in their {cav}, you keep eye contact and hold them so close that you can feel their warmth.",
+    "As you keep face to face, inches from eachother. Your {shaf} makes their {cav} a mess of fluids and sounds.",
+  ]),
+  
   /*
   'drooling-mess': new ValueBag([
     "They're a drooling, sloppy mess. Spit and precum dripping from their ruined {cav}.",
