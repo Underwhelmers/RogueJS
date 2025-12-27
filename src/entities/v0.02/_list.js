@@ -13,10 +13,15 @@ function entities_files() {
     'interactions/attack.js',
     'interactions/generic_effects.js',
 
-    'subparts/cavity.js',
     'subparts/shaft.js',
+    'subparts/cavities/cavity.js',
+    'subparts/cavities/factory.js',
+    'subparts/cavities/mouth.js',
+    'subparts/cavities/rectum.js',
+    'subparts/cavities/vagina.js',
 
     'descriptions/goblin_values_lists.js',
+    'subparts/intercourse_setup.js',
 
     'penetration/class.js',
     'penetration/tags.js',
