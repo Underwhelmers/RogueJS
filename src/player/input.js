@@ -31,13 +31,7 @@ function setup_player_input(engine) {
   });
 
   document.addEventListener('keyup', (e) => {
-    const data = heldKeys.get(e.key);
-    if (!data) return;
-
-    if (data.delay) clearTimeout(data.delay);
-    if (data.interval) clearInterval(data.interval);
-
-    heldKeys.delete(e.key);
+    clearKey(e.key);
   });
 }
 
@@ -48,6 +42,20 @@ function handleKey(engine, key) {
   else {
     player_moveandact_input(engine, key);
   }
+}
+
+function clearKeys() {
+  for (const k of heldKeys)
+    clearKey(k[0]);
+}
+function clearKey(key) {
+  const data = heldKeys.get(key);
+  if (!data) return;
+
+  if (data.delay) clearTimeout(data.delay);
+  if (data.interval) clearInterval(data.interval);
+
+  heldKeys.delete(key);
 }
 
 function player_menu_navigation_input(engine, key) {

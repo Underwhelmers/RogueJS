@@ -12,12 +12,14 @@ function log_text(tex) {
 }
 
 function open_menu(menutext) {
+  clearKeys();
   menu_text = menutext;
   menu_open = true;
   menu_options = {};
   _log_display(menu_text);
 }
 function close_menu() {
+  clearKeys();
   menu_text = null;
   menu_open = false;
   menu_options = null;
