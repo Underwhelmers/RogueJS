@@ -1,8 +1,7 @@
 function interaction_intercourse(engine, target, hole) {
   const aspect = engine.ecs.get(target, 'aspect');
-
   const desc = `A goblin with ${aspect.uniqueness}. Stops and presents their ${hole} for you to use.`;
-  
+
   open_menu(desc);
   add_menu_option('u',` [U] Use their ${hole}`, () => effect_intercourse_option1(engine,target,hole))
   add_menu_option('r',' [R] Reject the offer.', () => close_menu());
@@ -66,7 +65,8 @@ function apply_effect_intercourse(engine, target, hole) {
   for (const it of narrative)
     log_text(it);
   log_text('');
-
+  const to_evaluate = [chosenvals[0].tag,chosenvals[1].tag,chosenvals[2].tag];
+  log_text(`They scored you ${cavity.taste.evaluate(to_evaluate)}/9 when using: ${to_evaluate[0]}, ${to_evaluate[1]}, ${to_evaluate[2]}.`);
 
   close_menu();  
 }

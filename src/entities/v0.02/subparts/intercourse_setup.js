@@ -1,11 +1,11 @@
 function generate_taste() {
   const vals = [[],[],[]];
   for (v in INTERCOURSE_OPTS.TOOLS)
-    vals[0].push(v);
+    vals[0].push(INTERCOURSE_OPTS.TOOLS[v].tag);
   for (v in INTERCOURSE_OPTS.DEPTH)
-    vals[1].push(v);
+    vals[1].push(INTERCOURSE_OPTS.DEPTH[v].tag);
   for (v in INTERCOURSE_OPTS.STYLE)
-    vals[2].push(v);
+    vals[2].push(INTERCOURSE_OPTS.STYLE[v].tag);
 
   return new SecretGridVal(vals);
 }

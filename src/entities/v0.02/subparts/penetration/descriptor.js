@@ -12,7 +12,7 @@ function penetration_interpret_tags(cav, shaf, pen, tags) {
   
   // === All active tags ===
   const chosentags = tagPuller.multipull(
-    2, tags, tag => PENETRATION_LINES[tag]
+    3, tags, tag => PENETRATION_LINES[tag]
   );
 
   if (chosentags.length === 0) 
