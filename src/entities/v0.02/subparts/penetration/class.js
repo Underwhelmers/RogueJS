@@ -8,7 +8,7 @@ class Penetration {
   }
   
   interpret_tags(cav, shaf, tags) {
-    for (tag of this.tags)
+    for (const tag of this.tags)
       tags.push(tag);
     
     return penetration_interpret_tags(cav,shaf,this,tags);
