@@ -8,6 +8,7 @@ function log_text(tex) {
   currlog += '\n'+tex;
   if (!menu_open) {
     _log_display(currlog);
+    logdiv.scrollTop = logdiv.scrollHeight;
   }
 }
 
@@ -24,6 +25,7 @@ function close_menu() {
   menu_open = false;
   menu_options = null;
   _log_display(currlog);
+  logdiv.scrollTop = logdiv.scrollHeight;
 }
 
 function add_menu_option(optionkey, optiontext, func) {
