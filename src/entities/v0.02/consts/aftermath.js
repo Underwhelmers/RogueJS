@@ -42,6 +42,29 @@ const AFTERMATH = {
       "A soft whine slips out whenever she feels the emptiness most acutely.",
       "Her labia stay puffed and parted longer than usual, as if waiting.",
       "She presses two fingers shallowly inside herself almost absentmindedly."
-    ])
+    ]),
+    MEASURED: new ValueBag([
+      "Her inner walls still flutter, taking a big chunk of their attention.",
+      "A long, contented sigh escapes her every time she stretches.",
+      "The shape is still faintly felt by her when she moves.",
+      "She moves with an unconscious languid grace, as if savoring the internal memory.",
+      "While stanging against a wall, she waits for no one but you to watch and rubs against it."
+    ]),
+    DEEP: new ValueBag([
+      "She winces slightly after a fast move, hand instinctively pressing her lower belly.",
+      "A dull, heavy throb pulses invisibly under the skin whenever she lies.",
+      "Her cervix remains tender, so she mostly avoids sudden movements.",
+      "Every deep breath causes a faint, involuntary clench deep inside.",
+      "She keeps one hand resting low, as if cradling the place he reached.",
+      "Walking produces a soft, rhythmic wet sound between her thighs."
+    ]),
+    BEYOND_DEEP: new ValueBag([
+      "She moves with unusual care, as if something inside was subtly rearranged.",
+      "A strange, deep pressure makes her pause and breathe slowly whenever she bends.",
+      "Her lower abdomen looks faintly distended when she lies flat.",
+      "She occasionally presses both palms hard against her belly, eyes half-lidded.",
+      "A low, almost pained moan escapes her when she tries to sit up too quickly.",
+      "The shape of him lingers like a bruise deep in her core for days."
+    ]),
   },
 }

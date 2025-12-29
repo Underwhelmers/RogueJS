@@ -46,62 +46,55 @@ const INTERCOURSE_OPTS = {
       ])
     },
   },
-
   DEPTH: {
     RIMMING: {
       tag: 'rimming',
       val: 0.01,
       indicators: new ValueBag([
-        "Her rim looks slightly glossy and swollen, glistening whenever she moves.",
-        "She keeps unconsciously clenching and pulsing, blowing kisses at you.",
-        "The lightest brush of fabric against her entrance makes her breath catch audibly.",
-        "Her hips give tiny rocking motions even when she's trying to sit still."
+        "Her hips tilt upward insistently when your mouth gets anywhere near their hole.",
+        "She enfatises her hole by parting and touching it.",
+        "A soft, needy whimper escapes the second you brush the crease of their hole.",
+        "She keeps lifting one knee higher, opening herself more toward you.",
       ])
     },
+
     SHALLOW: {
       tag: 'shallow',
       val: 0.20,
       indicators: new ValueBag([
-        "Her entrance keeps clenching rhythmically, visibly searching for something.",
-        "She rocks her hips forward in tiny frustrated motions while half-asleep.",
-        "A soft whine slips out whenever she feels the emptiness most acutely.",
-        "Her labia stay puffed and parted longer than usual, as if waiting.",
-        "She presses two fingers shallowly inside herself almost absentmindedly later."
+        "She angles herself so it results imposible for you to venture very deep.",
+        "She rocks in tiny motions, while winking at you.",
+        "As she looks at you she makes a gesture of 'small' that seem more an instruction than an insult.",
+        "She gestures a big length with their arms and shakes their head from side, then shortens the distance a lot and starts to smile.",
+        "She presents herself in an awkwar possition that wont let you go in more than a little."
       ])
     },
+
     MEASURED: {
       tag: 'measured',
       val: 0.95,
       indicators: new ValueBag([
-        "Her inner walls still flutter in the same slow, even rhythm hours later.",
-        "A long, contented sigh escapes her every time she stretches.",
-        "The shape of him is still faintly visible when she presses low on her abdomen.",
-        "She moves with an unconscious languid grace, as if savoring the internal memory.",
-        "Her hips roll in slow, deliberate circles even when she's just standing."
+        "She moves her hips in slow figure-eights when looking at you, with their mind clearly ocupied picturing something.",
+        "Her palm rests flat on her own lower belly for a second longer than necessary, right where the cervix would sit.",
+        "The high waist of her pants is meticulously adjusted so the top button lines up exactly with her navel-to-cervix line.",
+        "She adjusts her belt so the high is just lined up with their cervix.",
+        "Her breathing stays deep and metronomic, chest and pelvis rising/falling in perfect sync.",
+        "A line in their clothing and posture traces a long, straight vertical line that seems to emphasize her 'full length'.",
+        "She unconsciously strokes one finger slowly from her navel downward while thinking."
       ])
     },
+
     DEEP: {
       tag: 'deep',
-      val: 1.05,
+      val: 10000000,
       indicators: new ValueBag([
-        "She winces slightly when laughing, hand instinctively pressing her lower belly.",
-        "A dull, heavy throb pulses visibly under the skin whenever she lies on her back.",
-        "Her cervix remains tender; she avoids sudden movements for the rest of the day.",
-        "Every deep breath causes a faint, involuntary clench deep inside.",
-        "She keeps one hand resting low, as if cradling the place he reached.",
-        "Walking produces a soft, rhythmic wet sound between her thighs."
-      ])
-    },
-    BEYOND_DEEP: {
-      tag: 'beyond-deep',
-      val: 100000,
-      indicators: new ValueBag([
-        "She moves with unusual care, as if something inside was subtly rearranged.",
-        "A strange, deep pressure makes her pause and breathe slowly whenever she bends.",
-        "Her lower abdomen looks faintly distended when she lies flat.",
-        "She occasionally presses both palms hard against her belly, eyes half-lidded.",
-        "A low, almost pained moan escapes her when she tries to sit up too quickly.",
-        "The shape of him lingers like a bruise deep in her core for days."
+        "Her pants sit unusually low, waistband barely clinging to her hipbones, exposing the full depth of her abdomen.",
+        "She keeps one hand resting low on her own belly, fingers splayed wide, thumb pointing down toward her mound.",
+        "The front of her clothing is repeatedly smoothed flat across her lower abdomen, emphasizing the long vertical plane.",
+        "Whenever she leans she seems to alingn her hole perfectly straight uncountiously.",
+        "Her clothing seem loose just avobe in the cervix, like expecting to be 'stressed' in that area.",
+        "The fabric over her pubic bone stretches taut every time she takes a deep breath or sighs.",
+        "She stands with body cocked forward and spine in a deep lordotic curve, offering the longest possible internal path."
       ])
     },
   },
@@ -110,53 +103,45 @@ const INTERCOURSE_OPTS = {
     FAST: {
       tag: 'fast',
       indicators: new ValueBag([
-        "Her thighs and calves tremble visibly when she finally stands up.",
-        "Her breathing still comes in short, sharp bursts even minutes later.",
-        "The bed creaks rhythmically in memory whenever she shifts.",
-        "Sweat still beads along her hairline hours after everything ended.",
-        "Her whole body vibrates with faint aftershocks every few minutes."
+        "Her breathing is already shallow and quick, chest rising in short, impatient bursts even while just talking.",
+        "She taps one foot rapidly under the table, the rhythm almost frantic whenever something slows down.",
+        "The thin fabric of her clothing flutters with the fast, restless rise-and-fall of her ribs.",
+        "Her fingers drum a rapid, erratic pattern on her thigh, never quite settling.",
+        "She keeps shifting her weight from one foot to the other in tiny, quick bounces when standing.",
+        "The pulse at the base of her throat jumps visibly, fast and erratic like she's already mid-chase.",
+        "Her earrings swing wildly with every tiny head movement, as if her whole body wants to vibrate."
       ])
     },
     ROUGH: {
       tag: 'rough',
       indicators: new ValueBag([
-        "Faint purple fingerprints bloom along her hips and inner thighs by morning.",
-        "Her throat shows a soft rasp when she speaks for the rest of the day.",
-        "Red handprints glow on her ass cheeks when she turns in the light.",
-        "Her scalp remains sensitive; she winces slightly when brushing her hair.",
-        "She sits gingerly, the welts on her thighs catching on fabric.",
-        "A pleased little smirk appears every time she catches her reflection."
+        "The neckline of her clothing sits lower than usual, exposing more collarbone and the faint shadow of biteable skin.",
+        "She wears a choker or tight necklace, that presses visibly into the soft flesh of her throat.",
+        "Her nails are long and sharp, tapping against things with deliberate force.",
+        "She stands with shoulders squared and chin slightly lifted, with an expression that informs she wants to be stopped.",
+        "She jolts with wet joy every time you push her to anything.",
+        "Her belt is thick and heavy, buckled tight, as if ready to be used for leverage or restraint."
       ])
     },
     NON_STOP: {
       tag: 'non-stop',
       indicators: new ValueBag([
-        "Her body looks utterly spent, limbs heavy and loose even hours later.",
-        "She winces at the overstimulation every time fabric brushes her clit.",
-        "Multiple damp spots mark the sheets in an almost artistic pattern.",
-        "Her voice has gone hoarse and soft from continuous moaning.",
-        "She keeps shivering randomly, as if her nerves are still overloaded."
-      ])
-    },
-    EDGING: {
-      tag: 'edging',
-      indicators: new ValueBag([
-        "Her clit remains painfully swollen and dark red, twitching at the slightest breeze.",
-        "Every small movement makes her gasp as if on the very edge again.",
-        "She keeps clenching hard, body desperately trying to finish what was denied.",
-        "Her hips jerk upward involuntarily whenever she starts to relax.",
-        "A thin sheen of frustrated sweat still covers her skin at midnight."
+        "Her gestures repeat one or two more times that what's necesary when she makes them.",
+        "Her hair is held back in a loose, practical knot that won't come undone no matter how much she sweats.",
+        "She wears clothing that can clearly handle coupios ammounts of heat and sweat without ruining.",
+        "She keeps licking her lips absentmindedly, leaving them glossy and constantly re-wetted.",
+        "She stands with legs slightly apart and weight balanced, posture that screams: I dare you to satisfy me.",
+        "There's an extra hair accessory held by them, ready for emergency containment."
       ])
     },
     INTIMATE: {
       tag: 'intimate',
       indicators: new ValueBag([
-        "Her whole body glows with a soft, warm flush that lasts for hours.",
-        "She keeps touching the places his hands lingered, eyes half-closed.",
-        "A tiny, contented smile flickers across her face whenever she remembers.",
-        "Her breathing stays slow and deep, matching some remembered rhythm.",
-        "She curls toward his side of the bed even when he's gone.",
-        "Her skin feels electrically sensitive everywhere he kissed."
+        "The perfume she wears is warm, close-range, something you'd only notice if faces were inches apart.",
+        "Her lips stay slightly parted, glossy but natural, as if always half-ready for a deep kiss.",
+        "She clings at you on every possible moment, with a gentle, needy closeness.",
+        "She stares at your eyes trying to catch your gaze constantly.",
+        "Her breath is intentionally prefumed and her gestures are performed so she looks fragile.",
       ])
     },
   },
