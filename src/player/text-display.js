@@ -4,6 +4,10 @@ let menu_open = false;
 let menu_text = null;
 let menu_options = null;
 
+function _log_display(text) {
+  logdiv.innerText = text;
+}
+
 function log_text(tex) {
   currlog += '\n'+tex;
   if (!menu_open) {
@@ -11,6 +15,11 @@ function log_text(tex) {
     logdiv.scrollTop = logdiv.scrollHeight;
   }
 }
+
+function log_info(tex) {
+  log_text(`---- [INFO]: ${tex}. ----`);
+}
+
 
 function open_menu(menutext) {
   clearKeys();
@@ -38,10 +47,6 @@ function add_menu_option(optionkey, optiontext, func) {
 function menu_check(key) {
   if (menu_options[key])
     menu_options[key]();
-}
-
-function _log_display(text) {
-  logdiv.innerText = text;
 }
 
 _log_display(currlog);

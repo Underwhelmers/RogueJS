@@ -7,6 +7,7 @@ function interaction_attack(engine, target) {
   add_menu_option('f',' [F] Facefuck.'         , () => effect_attack(engine,target,'face'));
   add_menu_option('a',' [A] Anal destruction.' , () => effect_attack(engine,target,'anal'));
   add_menu_option('r',' [R] Run.'              , () => close_menu());
+  log_info('Attacked');
 }
   
 function effect_attack(engine, target, orifice) {

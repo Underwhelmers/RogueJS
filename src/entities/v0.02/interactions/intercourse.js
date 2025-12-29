@@ -5,6 +5,7 @@ function interaction_intercourse(engine, target, hole) {
   open_menu(desc);
   add_menu_option('u',` [U] Use their ${hole}`, () => effect_intercourse_option1(engine,target,hole))
   add_menu_option('r',' [R] Reject the offer.', () => close_menu());
+  log_info('Fucked');
 }
 
 const chosenvals = [];
