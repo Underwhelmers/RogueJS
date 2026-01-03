@@ -3,7 +3,8 @@ function interaction_intercourse(engine, target, hole) {
   const desc = `A goblin with ${aspect.uniqueness}. Stops and presents their ${hole} for you to use.`;
 
   open_menu(desc);
-  add_menu_option('u',` [U] Use their ${hole}`, () => effect_intercourse_option1(engine,target,hole))
+  add_menu_option('a',` [A] Analize them.`, () => effect_intercourse_analize(engine,target,hole));
+  add_menu_option('u',` [U] Use their ${hole}.`, () => effect_intercourse_option1(engine,target,hole));
   add_menu_option('r',' [R] Reject the offer.', () => close_menu());
   log_info('Fucked');
 }
@@ -50,6 +51,8 @@ function effect_intercourse_store_opt3(engine, target, hole, opt) {
   chosenvals[2] = opt;
   apply_effect_intercourse(engine, target, hole);
 }
+
+
 
 function apply_effect_intercourse(engine, target, hole) {
   const bodyPJ = engine.ecs.get(engine.playerId, 'body');
@@ -103,4 +106,8 @@ function setup_penetration(phallus, cavity) {
     pen.tags.push('intimate');
   }
   return pen;
+}
+
+function effect_intercourse_analize(engine,target,hole) {  
+  
 }
